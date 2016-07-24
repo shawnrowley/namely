@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
 public class Resources {
 
     @Produces
-    @PersistenceContext(unitName="names")
+    @PersistenceContext(unitName="names") //Should be picked up by default, added unitname for visibilty and to be sure ;)
     private EntityManager em;
 
     @Produces
