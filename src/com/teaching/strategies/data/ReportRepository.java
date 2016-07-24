@@ -24,11 +24,18 @@ public class ReportRepository {
 	
 	private	GenderAPIClient genderClient;
 	
+	/**
+	 * Initializes Gender client and firstNames
+	 */
 	public ReportRepository() {
 		firstNames = new ArrayList<String>();
 		genderClient = new GenderAPIClient();
 	}
-		
+	/**
+	 * Generates report from first	
+	 * 
+	 * @return List<Report> list of reports objects
+	 */
 	public List<Report> getGenderReport() {
         List<Report> reports = new ArrayList<Report>();
         Set<String> uniqueNames = new HashSet<String>(this.getFirstNames());
@@ -44,6 +51,11 @@ public class ReportRepository {
         return reports;
     }
 	
+	/**
+	 * Compiles and list of first names	
+	 * 
+	 * @return List<String> list of first names
+	 */
 	public List<String> getFirstNames() {
 		firstNames.clear();
 		for (Person person : repository.getAllOrderedBylastName()) {

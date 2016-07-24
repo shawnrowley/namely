@@ -15,6 +15,12 @@ public class ReportRESTService {
 	@Inject
 	private ReportRepository repository;
     
+	/**
+	 * 
+	 * Get Reports
+	 * 
+	 * @return List<Report>
+	 */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Report> listAllPersons() {

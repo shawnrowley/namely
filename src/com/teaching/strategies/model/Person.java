@@ -12,7 +12,13 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-
+/**
+ * Person Entity class for persistent data Store
+ * 
+ * 
+ * @author srowley
+ *
+ */
 @SuppressWarnings("serial")
 @Entity
 @XmlRootElement

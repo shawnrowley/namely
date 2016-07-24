@@ -13,7 +13,12 @@ import javax.enterprise.context.ApplicationScoped;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.teaching.strategies.model.Gender;
-
+/**
+ * Gender API Client
+ * 
+ * @author srowley
+ *
+ */
 // TODO Refactor client
 public class GenderAPIClient {
 	
@@ -24,6 +29,13 @@ public class GenderAPIClient {
 	
 	}
 
+	/**
+	 * Returns Gender Object based on name
+	 * 
+	 * 
+	 * @param name
+	 * @return Gender
+	 */
 	public Gender getGenderByName(String name){
 		BufferedReader reader = null;
 		StringBuilder builder = null;
@@ -55,6 +67,13 @@ public class GenderAPIClient {
 
 	}	
 	
+	/**
+	 * Returns Gender Object based on name and IP
+	 * Future
+	 * @param name
+	 * @param ipAddress
+	 * @return
+	 */
 	public Gender getGenderByIP(String name, String ipAddress){
 		BufferedReader reader = null;
 		StringBuilder builder = null;
@@ -86,7 +105,14 @@ public class GenderAPIClient {
 
 	}	
 	
-	public Gender getGenderByCountry(String name, String country){
+	/**
+	 * Returns Gender Object based on name and country code
+	 * Future
+	 * @param name
+	 * @param country
+	 * @return
+	 */
+    public Gender getGenderByCountry(String name, String country){
 		BufferedReader reader = null;
 		StringBuilder builder = null;
 		String line = null;

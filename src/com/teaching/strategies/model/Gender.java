@@ -1,5 +1,11 @@
 package com.teaching.strategies.model;
-
+/**
+ * Gender class for GenderAPI
+ * 
+ * 
+ * @author srowley
+ *
+ */
 public  class Gender {
 
 	private String name;

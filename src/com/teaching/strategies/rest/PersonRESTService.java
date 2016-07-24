@@ -28,7 +28,13 @@ import javax.ws.rs.core.Response;
 import com.teaching.strategies.data.NameRepository;
 import com.teaching.strategies.model.Person;
 import com.teaching.strategies.service.PersonRegistration;
-
+/**
+ * 
+ * PersonRestService
+ * 
+ * @author srowley
+ *
+ */
 @Path("/Persons")
 @RequestScoped
 public class PersonRESTService {
@@ -45,12 +51,25 @@ public class PersonRESTService {
     @Inject
     PersonRegistration registration;
 
+    
+    /**
+     * Gets list of Persons
+     * 
+     * @return List<Person>
+     */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Person> getAllPersons() {
         return repository.getAllOrderedBylastName();
     }
-
+    
+    /**
+     *  getPersonByid 
+     *  may have future use
+     *  
+     * @param id
+     * @return Person
+     */
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -62,6 +81,11 @@ public class PersonRESTService {
         return person;
     }
     
+    /**
+     *  Delete Person
+     * 
+     * @param id
+     */
     @DELETE  
     @Path("{id}")  
     @Produces(MediaType.APPLICATION_JSON)  
@@ -78,6 +102,12 @@ public class PersonRESTService {
 		}  
      }  
       
+    /**
+     * Update Person
+     * 
+     * @param person
+     * @return Response 
+     */
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -99,6 +129,12 @@ public class PersonRESTService {
          return builder.build();
     }
    
+    /**
+     * Create Person
+     * 
+     * @param person
+     * @return Response
+     */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -121,6 +157,13 @@ public class PersonRESTService {
         return builder.build();
     }
     
+    /**
+     * Validate Person based persistent constraints
+     * 
+     * @param Person
+     * @throws ConstraintViolationException
+     * @throws ValidationException
+     */
     private void validatePerson(Person Person) throws ConstraintViolationException, ValidationException {
         Set<ConstraintViolation<Person>> violations = validator.validate(Person);
 

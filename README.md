@@ -38,7 +38,9 @@ For a quick implementation and with limited development time, I decided to go wi
 
 The persistent store is configured for create-drop, persisting the data for the session. But could modified down the road to attach to data schema once created. 
 
-RESTful service implementation for flexibility, backend implementation can be substituted without affecting the client.
+RESTful service implementation for flexibility, back-end implementation can be substituted without affecting the client. 
+
+This implementation gave me the opportunity to use AngularJS, Openshift, WildFly and some new JavaEE 7 features. 
 
 
 Technologies
@@ -48,7 +50,7 @@ JAX-RS
 JPA
 EJB
 AngularJS
-WildFly
+WildFly (Openshift)
 
 
 Project/Server
@@ -66,9 +68,19 @@ Ant build to to be deployed on JBoss compatible server. Current deployed on Wild
 	ant clean
 	ant build-war 
 	
-Enhancements
+Enhancements/Ideas
 -----------	
+
+Singleton bean to store/retreive credentials keys for GenderAPI
+Retrieval from GenderAPI to support batch (improve performance and limit request), IP address , and country codes.
+Country Code/IP Address Validation
+Alter back-end implementation (Go, Node.js, etc..)
+
+
+
+
 	
+
 	
 	
 	

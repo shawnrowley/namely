@@ -1,7 +1,13 @@
 package com.teaching.strategies.model;
 
 import java.io.Serializable;
-
+/**
+ * 
+ * Report class 
+ * 
+ * @author srowley
+ *
+ */
 @SuppressWarnings("serial")
 public class Report implements Serializable{
 	

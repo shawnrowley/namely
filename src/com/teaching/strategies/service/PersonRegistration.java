@@ -18,17 +18,37 @@ public class PersonRegistration {
     private EntityManager em;
 
 
+    /**
+     * Add person
+     * 
+     * @param person
+     * @throws Exception
+     */
     public void create(Person person) throws Exception {
         log.info("Adding " + person.getFirstName());
         em.persist(person);
     }
-        
+    
+    /**
+     *  
+     *  Delete Person   
+     *     
+     * @param person
+     * @throws Exception
+     */
     public void delete(Person person) throws Exception {
     	log.info("Deleting " + person.getFirstName());
     	Person removed = em.getReference(Person.class, person.getId());
         em.remove(removed);
      }
     
+    /**
+     * Update Person
+     * 
+     * @param person
+     * @return
+     * @throws Exception
+     */
     public Person update(Person person) throws Exception {
     	log.info("Updating " + person.getFirstName());
     	em.merge(person);

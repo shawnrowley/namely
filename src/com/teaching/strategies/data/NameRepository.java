@@ -17,11 +17,22 @@ public class NameRepository {
 
     @Inject
     private EntityManager em;
-
+    
+    /**
+     * find Person by id
+     * 
+     * @param id
+     * @return Person
+     */
     public Person findById(Long id) {
         return em.find(Person.class, id);
     }
 
+    /**
+     * gets all Persons Order by last name
+     * 
+     * @return  List<Person> list of Persons
+     */
     public List<Person> getAllOrderedBylastName() {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Person> criteria = cb.createQuery(Person.class);

@@ -13,7 +13,7 @@ public class Resources {
     @Produces
     @PersistenceContext(unitName="names") //Should be picked up by default, added unitname for visibilty and to be sure ;)
     private EntityManager em;
-
+     
     @Produces
     public Logger produceLog(InjectionPoint injectionPoint) {
         return Logger.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
