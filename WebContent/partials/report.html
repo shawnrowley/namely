@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Names Report</h2>
+    
+    <em ng-show="reports.length == 0">No registered person.</em>
+    <table ng-hide="reports.length == 0" class="simpletablestyle">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Instances</th>
+                <th>Gender</th>
+                <th>Accuracy</th>  
+            </tr>
+        </thead>
+        <tr ng-repeat="report in reports | orderBy:orderBy">
+            <td>{{report.name}}</td>
+            <td>{{report.instances}}</td>
+            <td>{{report.gender}}</td>
+            <td>{{report.accuracy}}%</td>
+     </table>
+     
+     <div>
+        <input type="button" ng-click="closeReport()" name="close" id="close" value="Close" />
+     </div>
+</div>
