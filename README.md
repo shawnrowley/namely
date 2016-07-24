@@ -36,12 +36,13 @@ Developer Notes
 
 For a quick implementation and with limited development time, I decided to go with implementation that would satisfy the assignment but could be expanded upon with more time. 
 
-The persistent store is configured for create-drop, persisting the data for the session. But could modified down the road to attach to data schema once created. 
+The persistent store is configured for create-drop, persisting the data for the session. Done for development and demo purpose without dependency a physical database.
 
 RESTful service implementation for flexibility, back-end implementation can be substituted without affecting the client. 
 
 This implementation gave me the opportunity to use AngularJS, Openshift, WildFly and some new JavaEE 7 features. 
 
+Began a golang implmentatation of the backend today https://github.com/shawnrowley/namemanagergo. Quick and fairly easy to implement a server, REST Service, and MongoDB.
 
 Technologies
 -----------
