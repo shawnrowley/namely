@@ -20,7 +20,6 @@ public class InitRegistration {
 	 * Initalization will contain properties to used 
 	 * by all
 	 * 
-	 * 
 	 */
 	@PostConstruct
 	public void startup() {

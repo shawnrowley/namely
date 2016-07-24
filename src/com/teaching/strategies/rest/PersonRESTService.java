@@ -98,7 +98,7 @@ public class PersonRESTService {
     	try {
 			registration.delete(person);
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.fine("Validation completed. violations found: " + e.getMessage());
 		}  
      }  
       
@@ -117,7 +117,9 @@ public class PersonRESTService {
              validatePerson(person);
              registration.update(person);
              builder = Response.ok();
-         } catch (ValidationException e) {
+          } catch (ConstraintViolationException ce) {
+        	  builder = createViolationResponse(ce.getConstraintViolations());
+          } catch (ValidationException e) {
              Map<String, String> responseObj = new HashMap<>();
              responseObj.put("error", e.getMessage());
              builder = Response.status(Response.Status.CONFLICT).entity(responseObj);
@@ -145,6 +147,8 @@ public class PersonRESTService {
             validatePerson(person);
             registration.create(person);
             builder = Response.ok();
+        } catch (ConstraintViolationException ce) {
+      	  	builder = createViolationResponse(ce.getConstraintViolations());
         } catch (ValidationException e) {
             Map<String, String> responseObj = new HashMap<>();
             responseObj.put("error", e.getMessage());
@@ -170,6 +174,22 @@ public class PersonRESTService {
         if (!violations.isEmpty()) {
             throw new ConstraintViolationException(new HashSet<ConstraintViolation<?>>(violations));
         }
+    }
+    
+    /**
+     * Generate constraint violation response
+     * 
+     * @param violations
+     * @return
+     */
+    private Response.ResponseBuilder createViolationResponse(Set<ConstraintViolation<?>> violations) {
+        log.fine("Validation completed. violations found: " + violations.size());
+        Map<String, String> responseObj = new HashMap<>();
+
+        for (ConstraintViolation<?> violation : violations) {
+            responseObj.put(violation.getPropertyPath().toString(), violation.getMessage());
+        }
+        return Response.status(Response.Status.BAD_REQUEST).entity(responseObj);
     }
    
 }

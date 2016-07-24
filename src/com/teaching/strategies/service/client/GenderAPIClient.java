@@ -22,7 +22,7 @@ import com.teaching.strategies.model.Gender;
 // TODO Refactor client
 public class GenderAPIClient {
 	
-	public final static String key = "vqyqDLVAJfsPYgCwtr";
+	public final static String key = "drdTuwqCXVAMYkReEo";
 	public final static String genderAPIurl = "https://gender-api.com/get?key=";
 
 	public GenderAPIClient() {
