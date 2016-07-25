@@ -42,7 +42,7 @@ RESTful service implementation for flexibility, back-end implementation can be s
 
 This implementation gave me the opportunity to use AngularJS, Openshift, WildFly and some new JavaEE 7 features. 
 
-Began a golang implmentatation of the backend today https://github.com/shawnrowley/namemanagergo. Quick and fairly easy to implement a server, REST Service, and MongoDB.
+Began a golang implmentation of the backend today https://github.com/shawnrowley/namemanagergo. Quick and fairly easy to implement a server, REST Service, and MongoDB.
 
 Technologies
 -----------
@@ -72,10 +72,10 @@ Ant build to to be deployed on JBoss compatible server. Current deployed on Wild
 Enhancements/Ideas
 -----------	
 
-Singleton bean to store/retreive credentials keys for GenderAPI
-Retrieval from GenderAPI to support batch (improve performance and limit request), IP address , and country codes.
-Country Code/IP Address Validation
-Alter back-end implementation (Go, Node.js, etc..)
+	Singleton bean to store/retreive credentials keys for GenderAPI
+	Retrieval from GenderAPI to support batch (improve performance and limit request), IP address , and country codes.
+	Country Code/IP Address Validation
+	Alter back-end implementation (Go, Node.js, etc..) DONE!
 
 
 
