@@ -25,7 +25,7 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.teaching.strategies.data.NameRepository;
+import com.teaching.strategies.data.PersonRepository;
 import com.teaching.strategies.model.Person;
 import com.teaching.strategies.service.PersonRegistration;
 /**
@@ -46,7 +46,7 @@ public class PersonRESTService {
     private Validator validator;
 
     @Inject
-    private NameRepository repository;
+    private PersonRepository repository;
     
     @Inject
     PersonRegistration registration;

@@ -38,6 +38,7 @@ public class Person implements Serializable {
     @Pattern(regexp = "[^0-9]*", message = "Must not contain numbers")
     private String lastName;
 
+    @NotNull
     @Size(min = 2, max = 2)
     private String country;
 

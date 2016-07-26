@@ -19,7 +19,7 @@ import com.teaching.strategies.service.client.GenderAPIClient;
 public class ReportRepository {
 	
 	@Inject
-    private NameRepository repository;
+    private PersonRepository repository;
 
 	private List<String> firstNames;
 	
@@ -41,11 +41,13 @@ public class ReportRepository {
     	for (String name : uniqueSet) {
     		Report report = new Report();
         	Gender gen = gender.getGenderByName(name);
-        	report.setGender(gen.getGender());
-        	report.setAccuracy(gen.getAccuracy());
-        	report.setName(name);
-        	report.setInstances(Collections.frequency(firstNames,name));
-        	reports.add(report);
+        	if (gen != null) {
+        		report.setGender(gen.getGender());
+        		report.setAccuracy(gen.getAccuracy());
+        		report.setName(name);
+        		report.setInstances(Collections.frequency(firstNames,name));
+        		reports.add(report);
+        	}
     	}
         return reports;
     }
@@ -62,13 +64,14 @@ public class ReportRepository {
     		for (String country : repository.getCountry(name)) {
     			Report report = new Report();
         		Gender gen = genderClient.getGenderByCountry(name, country);
-        		report.setGender(gen.getGender());
-        		report.setAccuracy(gen.getAccuracy());
-        		report.setName(name);
-        		report.setCountry(country);
-        		//report.setInstances(Collections.frequency(firstNames,name));
-        		report.setInstances(repository.getNameCountByCountry(name, country));
-        		reports.add(report);
+        		if (gen != null) {
+        			report.setGender(gen.getGender());
+        			report.setAccuracy(gen.getAccuracy());
+        			report.setName(name);
+        			report.setCountry(country);
+        			report.setInstances(repository.getNameCountByCountry(name, country));
+        			reports.add(report);
+        		}
     		}	
     	}
         return reports;

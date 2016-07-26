@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ApplicationScoped
-public class NameRepository {
+public class PersonRepository {
 
     @Inject
     private EntityManager em;
@@ -60,10 +60,10 @@ public class NameRepository {
                     cb.parameter(String.class, "param")));
         TypedQuery<String> tq = em.createQuery(query);
         tq.setParameter("param", name);
-        return tq.getResultList();
+        List<String> countries = tq.getResultList();
+        return countries;
     }
-    
-
+ 
     /**
      * getNameCountByCountry
      * 
