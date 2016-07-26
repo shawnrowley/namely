@@ -44,6 +44,8 @@ This implementation gave me the opportunity to use AngularJS, Openshift, WildFly
 
 Began a golang implmentation of the backend today https://github.com/shawnrowley/namemanagergo. Quick and fairly easy to implement a server, REST Service, and MongoDB.
 
+Added initial localization implementation country.
+
 Technologies
 -----------
 
