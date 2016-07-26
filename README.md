@@ -44,6 +44,8 @@ This implementation gave me the opportunity to use AngularJS, Openshift, WildFly
 
 Began a golang implmentation of the backend today https://github.com/shawnrowley/namemanagergo. Quick and fairly easy to implement a server, REST Service, and MongoDB.
 
+Added initial localization implementation country.
+
 Technologies
 -----------
 
@@ -73,7 +75,10 @@ Enhancements/Ideas
 -----------	
 
 	Singleton bean to store/retreive credentials keys for GenderAPI
-	Retrieval from GenderAPI to support batch (improve performance and limit request), IP address , and country codes.
+	Retrieval from GenderAPI to support 
+		batch (improve performance and limit request)
+		IP address
+		Country codes - DONE!
 	Country Code/IP Address Validation
 	Alter back-end implementation (Go, Node.js, etc..) DONE!
 
