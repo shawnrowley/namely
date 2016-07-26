@@ -66,7 +66,8 @@ public class ReportRepository {
         		report.setAccuracy(gen.getAccuracy());
         		report.setName(name);
         		report.setCountry(country);
-        		report.setInstances(Collections.frequency(firstNames,name));
+        		//report.setInstances(Collections.frequency(firstNames,name));
+        		report.setInstances(repository.getNameCountByCountry(name, country));
         		reports.add(report);
     		}	
     	}

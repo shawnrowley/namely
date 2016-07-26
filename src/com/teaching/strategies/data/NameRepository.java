@@ -8,10 +8,12 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import com.teaching.strategies.model.Person;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @ApplicationScoped
@@ -61,7 +63,32 @@ public class NameRepository {
         return tq.getResultList();
     }
     
-    
+
+    /**
+     * getNameCountByCountry
+     * 
+     * @return  Long count
+     */
+    public Long getNameCountByCountry(String name, String country) {
+    	CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Long> query = cb.createQuery(Long.class);
+        Root<Person> person = query.from(Person.class);
+        query.select(cb.count(person));
+        query.distinct(true);
+        
+        List<Predicate> predicates = new ArrayList<Predicate>();
+        predicates.add(cb.equal(person.<String>get("firstName"),
+                       cb.parameter(String.class, "paramName")));
+        predicates.add(cb.equal(person.<String>get("country"),
+                       cb.parameter(String.class, "paramCountry")));
+        
+        query.where(predicates.toArray(new Predicate[]{}) ); 
+        TypedQuery<Long> tq = em.createQuery(query);
+        tq.setParameter("paramName", name);
+        tq.setParameter("paramCountry", country);
+        Long count = tq.getSingleResult();
+        return count;
+    }
     
     
         

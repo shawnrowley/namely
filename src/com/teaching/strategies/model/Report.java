@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class Report implements Serializable{
 	
 	private String name;
-	private int instances;
+	private Long instances;
 	private String gender;
 	private String accuracy;
 	private String country;
@@ -24,11 +24,15 @@ public class Report implements Serializable{
 		this.name = name;
 	}
 
-	public int getInstances() {
+	public Long getInstances() {
 		return instances;
 	}
-	public void setInstances(int instances) {
+	public void setInstances(Long instances) {
 		this.instances = instances;
+	}
+	
+	public void setInstances(int instances) {
+		this.instances = new Long(instances);
 	}
 
 	public String getGender() {
