@@ -13,6 +13,7 @@ public  class Gender {
 	private String samples;
 	private String accuracy;
 	private String duration;
+	private String country;
 
 	public String getName() {
 		return name;
@@ -43,6 +44,12 @@ public  class Gender {
 	}
 	public void setDuration(String duration) {
 		this.duration = duration;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
 	}
 }
 

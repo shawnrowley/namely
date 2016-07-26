@@ -15,6 +15,7 @@ public class Report implements Serializable{
 	private int instances;
 	private String gender;
 	private String accuracy;
+	private String country;
 
 	public String getName() {
 		return name;
@@ -42,6 +43,12 @@ public class Report implements Serializable{
 	}
 	public void setAccuracy(String accuracy) {
 		this.accuracy = accuracy;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
 }

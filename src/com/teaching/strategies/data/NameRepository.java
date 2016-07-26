@@ -4,6 +4,8 @@ package com.teaching.strategies.data;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -40,5 +42,27 @@ public class NameRepository {
         criteria.select(Person).orderBy(cb.asc(Person.get("lastName")));
         return em.createQuery(criteria).getResultList();
     }
+    
+    /**
+     * getCountry by name
+     * 
+     * @return  List<String> list Countries
+     */
+    public List<String> getCountry(String name) {
+    	CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<String> query = cb.createQuery(String.class);
+        Root<Person> person = query.from(Person.class);
+        query.select(person.<String>get("country"));
+        query.distinct(true);
+        query.where(cb.equal(person.<String>get("firstName"),
+                    cb.parameter(String.class, "param")));
+        TypedQuery<String> tq = em.createQuery(query);
+        tq.setParameter("param", name);
+        return tq.getResultList();
+    }
+    
+    
+    
+    
         
 }

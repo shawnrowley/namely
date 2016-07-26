@@ -6,6 +6,7 @@
         <thead>
             <tr>
                 <th>First Name</th>
+                <th>Country</th>
                 <th>Instances</th>
                 <th>Gender</th>
                 <th>Accuracy</th>  
@@ -13,6 +14,7 @@
         </thead>
         <tr ng-repeat="report in reports | orderBy:orderBy">
             <td>{{report.name}}</td>
+            <td>{{report.country}}</td>
             <td>{{report.instances}}</td>
             <td>{{report.gender}}</td>
             <td>{{report.accuracy}}%</td>

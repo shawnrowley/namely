@@ -24,6 +24,6 @@ public class ReportRESTService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Report> listAllPersons() {
-    	 return repository.getGenderReport();
+    	 return repository.getGenderCountryReport();
     }
 }
