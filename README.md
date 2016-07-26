@@ -75,7 +75,10 @@ Enhancements/Ideas
 -----------	
 
 	Singleton bean to store/retreive credentials keys for GenderAPI
-	Retrieval from GenderAPI to support batch (improve performance and limit request), IP address , and country codes.
+	Retrieval from GenderAPI to support 
+		batch (improve performance and limit request)
+		IP address
+		Country codes - DONE!
 	Country Code/IP Address Validation
 	Alter back-end implementation (Go, Node.js, etc..) DONE!
 
