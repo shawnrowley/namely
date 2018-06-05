@@ -9,17 +9,26 @@ package com.teaching.strategies.model;
 public  class Gender {
 
 	private String name;
+	private String name_sanitized;
 	private String gender;
 	private String samples;
 	private String accuracy;
 	private String duration;
 	private String country;
+	private String credits_used;
+	
 
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getName_sanitized() {
+		return name_sanitized;
+	}
+	public void setName_sanitized(String name_sanitized) {
+		this.name_sanitized = name_sanitized;
 	}
 	public String getGender() {
 		return gender;
@@ -51,6 +60,13 @@ public  class Gender {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+	public String getCredits_used() {
+		return credits_used;
+	}
+	public void setCredits_used(String credits_used) {
+		this.credits_used = credits_used;
+	}
+	
 }
 
 
