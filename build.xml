@@ -110,7 +110,7 @@
 
 	<target name="build-war" depends="build">
 		<mkdir dir="dist"/>
-		<war destfile="dist/namemanager.war" needxmlfile="false" >
+		<war destfile="namemanager.war" needxmlfile="false" >
 			<fileset dir="WebContent">
 				<include name="**/*.*"/>
 			</fileset>
