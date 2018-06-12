@@ -3,7 +3,7 @@
 ====================
 Author: Shawn A. Rowley  
 Source: <https://github.com/shawnrowley/namemanager/>  
-Application: http://namemanager-namemanager.a3c1.starter-us-west-1.openshiftapps.com/namemanager/
+Application: http://nameregistrar-nameregistrar.a3c1.starter-us-west-1.openshiftapps.com/namemanager/
 
 Overview
 -----------
@@ -16,7 +16,7 @@ Public API: https://gender-api.com/en/api-docs
 Application User Guide
 -----------
 
-The application can be accessed at http://namemanager-namemanager.a3c1.starter-us-west-1.openshiftapps.com/namemanager/
+The application can be accessed at http://nameregistrar-nameregistrar.a3c1.starter-us-west-1.openshiftapps.com/namemanager/
 
 To use the application simple enter a name (Only the first name is required) and click the Add button
 
