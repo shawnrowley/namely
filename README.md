@@ -1,8 +1,8 @@
-# namemanager
+# namely
 
 ====================
 Author: Shawn A. Rowley  
-Source: <https://github.com/shawnrowley/namemanager/>  
+Source: <https://github.com/shawnrowley/namely/>  
 
 Overview
 -----------
@@ -10,6 +10,8 @@ Overview
 Create an app that allows you to manage names. Basic CRUD operation. Also include a report which will display all the names, how many times each name has been entered, and query this public API to also show the likely gender and confidence level.
 
 Public API: https://gender-api.com/en/api-docs
+
+This project was spawn from the orginal namemanager project with the intentions to upgrade to newer technologies and deployment to cloud.  
 
 
 Application User Guide
@@ -56,28 +58,18 @@ WildFly (Openshift)
 Project/Server
 -----------
 
-Eclipse/JBossDevStudio
-Server: JBoss/WildFly 
+Eclipse
+Server: Tomcat?
 
 
 Deployment
 -----------
 
-Ant build to to be deployed on JBoss compatible server. Current deployed on WildFly Server
-
-	ant clean
-	ant build-war 
 	
 Enhancements/Ideas
 -----------	
 
-	Singleton bean to store/retreive credentials keys for GenderAPI
-	Retrieval from GenderAPI to support 
-		batch (improve performance and limit request)
-		IP address
-		Country codes - DONE!
-	Country Code/IP Address Validation
-	Alter back-end implementation (Go, Node.js, etc..) DONE!
+	
 
 
 
